@@ -288,6 +288,55 @@ public class PerformanceReport extends AbstractReport implements Serializable,
     }
     return size() - lastBuildReport.size();
   }
+  
+  public boolean isDisplayMedian() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideMedian();
+  }
+
+  public boolean isDisplayLine90() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideLine90();
+  }
+  
+  public boolean isDisplayMinMax() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideMinMax();
+  }
+  
+  public boolean isDisplayHttpCode() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideHttpCode();
+  }
+  
+  public boolean isDisplayError() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideError();
+  }
+ 
+  public boolean isDisplayKB() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideKB();
+  }
+  
+  public boolean isDisplaySamples() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideSamples();
+  }
+  
+  public boolean isDisplayAverage() 
+  {
+	  return !buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getHideAverage();
+  }
+
 
   /**
    * Check if the filename of the file being parsed is being parsed by a

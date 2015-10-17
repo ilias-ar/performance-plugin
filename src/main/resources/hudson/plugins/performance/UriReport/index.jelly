@@ -18,7 +18,7 @@
                 <jm:summaryTableSummarizer it="${it}" />
               </j:when>
               <j:otherwise>
-                <jm:summaryTable it="${it}" />
+                <jm:summaryTable it="${it}" performanceReport="${performanceReport}" />
               </j:otherwise>
             </j:choose>
         </tr>

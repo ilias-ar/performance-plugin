@@ -26,7 +26,7 @@
                <jm:summaryTableSummarizer it="${uriReport}" />
              </j:when>
              <j:otherwise>
-               <jm:summaryTable it="${uriReport}" />
+               <jm:summaryTable it="${uriReport}" performanceReport="${performanceReport}" />
              </j:otherwise>
            </j:choose>
            </tr>
