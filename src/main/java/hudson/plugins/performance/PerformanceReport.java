@@ -337,6 +337,11 @@ public class PerformanceReport extends AbstractReport implements Serializable,
 		        .getPublishersList().get(PerformancePublisher.class).getHideAverage();
   }
 
+  public String timingUnits() 
+  {
+	 return buildAction.getBuild().getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getTimeUnits();
+  }
 
   /**
    * Check if the filename of the file being parsed is being parsed by a

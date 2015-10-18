@@ -119,12 +119,12 @@ public final class PerformanceProjectAction implements Action {
     return chart;
   }
 
-  protected static JFreeChart createRespondingTimeChart(CategoryDataset dataset) {
-
+  protected static JFreeChart createRespondingTimeChart(CategoryDataset dataset, String yAxis) {
+	
     final JFreeChart chart = ChartFactory.createLineChart(
         Messages.ProjectAction_RespondingTime(), // charttitle
         null, // unused
-        "ms", // range axis label
+        yAxis, // range axis label
         dataset, // data
         PlotOrientation.VERTICAL, // orientation
         true, // include legend
@@ -387,7 +387,8 @@ public final class PerformanceProjectAction implements Action {
       nbBuildsToAnalyze--;
     }
     ChartUtil.generateGraph(request, response,
-        createRespondingTimeChart(dataSetBuilderAverage.build()), 600, 200);
+        createRespondingTimeChart(dataSetBuilderAverage.build(), getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getTimeUnits()), 600, 200);
 
   }
 
@@ -438,7 +439,8 @@ public final class PerformanceProjectAction implements Action {
       continue;
     }
     ChartUtil.generateGraph(request, response,
-        createRespondingTimeChart(dataSetBuilderAverage.build()), 400, 200);
+        createRespondingTimeChart(dataSetBuilderAverage.build(),getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getTimeUnits()), 400, 200);
   }
 
     public void doThroughputGraph(final StaplerRequest request, final StaplerResponse response) throws IOException {

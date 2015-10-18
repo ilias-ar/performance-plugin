@@ -48,7 +48,19 @@
       </tbody>
     </table>
     </f:entry>
-   
+   <f:advanced>
+      <f:entry title="${%Timing units:}" >
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <f:booleanRadio name="isInMicroSeconds" field="isInMicroSeconds" true="µs" false="ms" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </f:entry>
+    </f:advanced>
   
   <f:block>
     <f:entry title="Use Error thresholds on single build:   ">

@@ -140,6 +140,7 @@ public class PerformancePublisher extends Recorder {
   private boolean hideHttpCode;
   private boolean hideError;
   private boolean hideKB;
+  private boolean isInMicroSeconds;
 
   @DataBoundConstructor
   public PerformancePublisher(int errorFailedThreshold,
@@ -163,7 +164,8 @@ public class PerformancePublisher extends Recorder {
                             boolean hideMinMax,
                             boolean hideHttpCode,
                             boolean hideError,
-                            boolean hideKB) {
+                            boolean hideKB,
+                            boolean isInMicroSeconds) {
 
     this.errorFailedThreshold = errorFailedThreshold;
     this.errorUnstableThreshold = errorUnstableThreshold;
@@ -182,6 +184,7 @@ public class PerformancePublisher extends Recorder {
     this.hideHttpCode = hideHttpCode;
     this.hideError = hideError;
     this.hideKB = hideKB;
+    this.isInMicroSeconds = isInMicroSeconds;
 	
     this.nthBuildNumber = nthBuildNumber;
     this.configType = comparisonType;
@@ -1054,6 +1057,19 @@ public class PerformancePublisher extends Recorder {
   
   public boolean isModeThroughput() {
     return modeThroughput;
+  }
+  
+  public boolean getIsInMicroSeconds() {
+	    return isInMicroSeconds;
+  }
+  
+  public String getTimeUnits()
+  {
+	  if (isInMicroSeconds)
+	  {
+		  return "µs";
+	  }
+	  return "ms";
   }
 
   public void setModeThroughput(boolean modeThroughput) {

@@ -20,19 +20,19 @@
 		<th>${%Samples diff}</th>
 	</j:if>
 	<j:if test="${it.isDisplayAverage()}" >
-		<th>${%Average} (ms)</th>
-		<th>${%Average diff} (ms)</th>
+		<th>${%Average} (${it.timingUnits()})</th>
+		<th>${%Average diff} (${it.timingUnits()})</th>
 	</j:if>
 	<j:if test="${it.isDisplayMedian()}" >
-		<th>${%Median} (ms)</th>
-		<th>${%Median diff} (ms)</th>
+		<th>${%Median} (${it.timingUnits()})</th>
+		<th>${%Median diff} (${it.timingUnits()})</th>
     </j:if>
 	<j:if test="${it.isDisplayLine90()}" >
-		<th>${%Line90} (ms)</th>
+		<th>${%Line90} (${it.timingUnits()})</th>
 	</j:if>
 	<j:if test="${it.isDisplayMinMax()}" >
-		<th>${%Minimum} (ms)</th>
-		<th>${%Maximum} (ms)</th>
+		<th>${%Minimum} (${it.timingUnits()})</th>
+		<th>${%Maximum} (${it.timingUnits()})</th>
 	</j:if>
 	<j:if test="${it.isDisplayHttpCode()}" >
 		<th>${%Http Code}</th>

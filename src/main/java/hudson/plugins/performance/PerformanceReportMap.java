@@ -206,7 +206,8 @@ public class PerformanceReportMap implements ModelObject {
           Messages.ProjectAction_Average(), label);
     }
     ChartUtil.generateGraph(request, response, PerformanceProjectAction
-        .createRespondingTimeChart(dataSetBuilderAverage.build()), 400, 200);
+        .createRespondingTimeChart(dataSetBuilderAverage.build(),currentBuild.getProject()
+		        .getPublishersList().get(PerformancePublisher.class).getTimeUnits()), 400, 200);
   }
 
   public void doSummarizerGraph(StaplerRequest request, StaplerResponse response)
